@@ -3138,16 +3138,16 @@ local TotalEdit = Redis:get(PETER..'Num:Message:Edit'..msg_chat_id..msg.sender.u
 local TotalMsgT = Total_message(TotalMsg) 
 local NumberGames = Redis:get(PETER.."Num:Add:Games"..msg.chat_id..msg.sender.user_id) or 0
 local NumAdd = Redis:get(PETER.."Num:Add:Memp"..msg.chat_id..":"..msg.sender.user_id) or 0
-local Texting = {'ملاك وناسيك بكروبنه😟',"حلغوم والله☹️ ","اطلق صوره🐼❤️","كيكك والله🥺","لازك بيها غيرها عاد😒",}
+local Texting = { "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",  "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",  "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",  "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",  "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",  "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",  "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"}
 local Description = Texting[math.random(#Texting)]
 if UserInfo.username then
 UserInfousername = '@'..UserInfo.username..''
-else 
-UserInfousername = 'لا يوجد'
+else UserInfousername = 'لا يوجد'
 end
-Get_Is_Id = Redis:get(PETER.."Set:Id:Groups") or Redis:get(PETER.."Set:Id:Group"..msg_chat_id)
+Get_Is_Id = Redis:get(PETER.."Set:Id:Group"..msg_chat_id) or Redis:get(PETER.."Set:Id:Groups")
 if Redis:get(PETER.."Status:IdPhoto"..msg_chat_id) then
 if Get_Is_Id then
+local Get_Is_Id = Get_Is_Id:gsub('#name',Name_User) 
 local Get_Is_Id = Get_Is_Id:gsub('#AddMem',NumAdd) 
 local Get_Is_Id = Get_Is_Id:gsub('#id',msg.sender.user_id) 
 local Get_Is_Id = Get_Is_Id:gsub('#username',UserInfousername) 
@@ -3158,6 +3158,7 @@ local Get_Is_Id = Get_Is_Id:gsub('#auto',TotalMsgT)
 local Get_Is_Id = Get_Is_Id:gsub('#Description',Description) 
 local Get_Is_Id = Get_Is_Id:gsub('#game',NumberGames) 
 local Get_Is_Id = Get_Is_Id:gsub('#photos',TotalPhoto) 
+local Get_Is_Id = Get_Is_Id:gsub('#bio',getbio(UserId)) 
 if photo.total_count > 0 then
 return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,Get_Is_Id)
 else
@@ -3165,29 +3166,13 @@ return LuaTele.sendText(msg_chat_id,msg_id,Get_Is_Id,"md",true)
 end
 else
 if photo.total_count > 0 then
-return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,
-'\n*⋆'..Description..
-'\n⋆ ايديك : '..UserId..
-'\n⋆ معرفك : '..UserInfousername..
-'\n⋆‍ رتبتك : '..RinkBot..
-'\n⋆ صورك : '..TotalPhoto..
-'\n⋆ رسائلك : '..TotalMsg..
-'\n⋆ تعديلاتك : '..TotalEdit..
-'\n⋆ تفاعلك : '..TotalMsgT..
-'*', "md")
+return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,Description..'\n◄|  ID ↬  '..UserId..'\n◄|  User ↬  ['..UserInfousername..']'..'\n◄|  Rink ↬  '..RinkBot..'\n◄|  Photos ↬ '..TotalPhoto..'\n◄|  Msgs ↬ '..TotalMsg..'\n◄|  Edits ↬ '..TotalEdit..'\n◄|  Active ↬ '..TotalMsgT..'\n◄|  Bio ↬ *'..getbio(UserId)..'*'..'', "md")
 else
-return LuaTele.sendText(msg_chat_id,msg_id,
-'\n*⋆ ايديك : '..UserId..
-'\n⋆ معرفك : '..UserInfousername..
-'\n⋆‍ رتبتك : '..RinkBot..
-'\n⋆ رسائلك : '..TotalMsg..
-'\n⋆ تعديلاتك : '..TotalEdit..
-'\n⋆ تفاعلك : '..TotalMsgT..
-'*',"md",true) 
-end
-end
+return LuaTele.sendText(msg_chat_id,msg_id,'◄|  User ↬  ['..UserInfousername..']'..'\n◄|  Rink ↬  '..RinkBot..'\n◄|  ID ↬  '..UserId..'\n◄|  Photos ↬ '..TotalPhoto..'\n◄|  Msgs ↬ '..TotalMsg..'\n◄|  Edits ↬ '..TotalEdit..'\n◄|  Active ↬ '..TotalMsgT..'\n◄|  Bio ↬ *'..getbio(UserId)..'*'..'',"md",true) 
+end end
 else
 if Get_Is_Id then
+local Get_Is_Id = Get_Is_Id:gsub('#name',Name_User) 
 local Get_Is_Id = Get_Is_Id:gsub('#AddMem',NumAdd) 
 local Get_Is_Id = Get_Is_Id:gsub('#id',msg.sender.user_id) 
 local Get_Is_Id = Get_Is_Id:gsub('#username',UserInfousername) 
@@ -3198,19 +3183,11 @@ local Get_Is_Id = Get_Is_Id:gsub('#auto',TotalMsgT)
 local Get_Is_Id = Get_Is_Id:gsub('#Description',Description) 
 local Get_Is_Id = Get_Is_Id:gsub('#game',NumberGames) 
 local Get_Is_Id = Get_Is_Id:gsub('#photos',TotalPhoto) 
+local Get_Is_Id = Get_Is_Id:gsub('#bio',getbio(UserId)) 
 return LuaTele.sendText(msg_chat_id,msg_id,'['..Get_Is_Id..']',"md",true) 
 else
-return LuaTele.sendText(msg_chat_id,msg_id,
-'\n*⋆ ايديك : '..UserId..
-'\n⋆ معرفك : '..UserInfousername..
-'\n⋆‍ رتبتك : '..RinkBot..
-'\n⋆ رسائلك : '..TotalMsg..
-'\n⋆ تعديلاتك : '..TotalEdit..
-'\n⋆ تفاعلك : '..TotalMsgT..
-'*',"md",true) 
-end
-end
-end
+return LuaTele.sendText(msg_chat_id,msg_id,'◄|  ID ↬  '..UserId..'\n◄|  User ↬  ['..UserInfousername..']'..'\n◄|  Rink ↬  '..RinkBot..'\n◄|  Msgs ↬ '..TotalMsg..'\n◄|  Edits ↬ '..TotalEdit..'\n◄|  Active ↬ '..TotalMsgT..'\n◄|  Bio ↬ *'..getbio(UserId)..'*'..'',"md",true) 
+end end end end
 if text == 'كشف' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
@@ -4750,7 +4727,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,"جبتلك عروسه انما اي لقطه "..mem_tag.." اي رايك فيها ؟؟","md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,"⋆ اختارتلك عروسه زي العسل "..mem_tag.." اي رايك فيها ؟","md",false, false, false, false, reply_markup)
 end
 end
 if text == "زواج" or text == "رفع زوجتي" or text == "رفع زوجي" and msg.reply_to_message_id ~= 0 then
