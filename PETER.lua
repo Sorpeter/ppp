@@ -12521,7 +12521,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_pers
 {{text = 'الاشتراك الاجباري ⋆',type = 'text'},},
 {{text = 'المطورين ⋆',type = 'text'},{text = 'العام ⋆',type = 'text'},},
 {{text = 'تحديث الملفات ⋆',type = 'text'}, },}}
-return LuaTele.sendText(msg_chat_id,msg_id,'⋆︙مرحبا عزيزي المطور \n⋆︙انت المطور الاساسي هنا \n⋆︙اليك ازرار بوت بيتر \n⋆︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'⋆ مرحبا عزيزي المطور \n⋆ اليك ازرار التحكم الخاص بك', 'md', false, false, false, false, reply_markup)
 end
 end
 if text == "التفعيل والتعطيل ⋆" and msg.Devss then
@@ -12531,7 +12531,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_pers
 {{text = 'تفعيل الاذاعه ⋆',type = 'text'},{text = 'تعطيل الاذاعه ⋆',type = 'text'},},
 {{text = 'تفعيل المغادره ⋆',type = 'text'},{text = 'تعطيل المغادره ⋆',type = 'text'},},
 {{text = 'رجـوع ⋆',type = 'text'},},}}
-return LuaTele.sendText(msg_chat_id,msg_id,'⋆︙اهلا بك مجددا عزيزي المطور \n⋆︙اليك الازرار الخاصه ب التفعيل والتعطيل لبوت بيتر فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'⋆ اهلا بك مجددا عزيزي المطور \n⋆ اليك الازرار الخاصه ب التفعيل والتعطيل', 'md', false, false, false, false, reply_markup)
 end
 if text == "الاحصائيات ⋆" and msg.Devss then
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,data = {
@@ -12539,7 +12539,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_pers
 {{text = 'تنظيف المجموعات ⋆',type = 'text'},{text = 'تنظيف المشتركين ⋆', type = 'text'},},
 {{text = 'جلب النسخه الاحتياطيه ⋆',type = 'text'},},
 {{text = 'رجـوع ⋆',type = 'text'},},}}
-return LuaTele.sendText(msg_chat_id,msg_id,'⋆︙اهلا بك مجددا عزيزي المطور \n⋆︙اليك الازرار الخاصه ب أحصائيات  بوت بيتر فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'⋆ اهلا بك مجددا عزيزي المطور \n⋆ اليك الازرار الخاصه ب الأحصائيات', 'md', false, false, false, false, reply_markup)
 end
 if text == "الاشتراك الاجباري ⋆" and msg.Devss then
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,data = {
@@ -12547,7 +12547,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_pers
 {{text = 'تعطيل الاشتراك الاجباري لكل الاعضاء ⋆',type = 'text'},{text = 'تفعيل الاشتراك الاجباري لكل الاعضاء ⋆', type = 'text'},},
 {{text = 'الغاء ⋆',type = 'text'},},
 {{text = 'رجـوع ⋆',type = 'text'},},}}
-return LuaTele.sendText(msg_chat_id,msg_id,'⋆︙اهلا بك مجددا عزيزي المطور \n⋆︙اليك الازرار الخاصه ب أحصائيات  بوت بيتر فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'⋆ اهلا بك مجددا عزيزي المطور \n⋆ اليك الازرار الخاصه ب الأشتراك الأجباري', 'md', false, false, false, false, reply_markup)
 end
 if text == "المطورين ⋆" and msg.Devss then
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,data = {
@@ -12557,7 +12557,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_pers
 {{text = 'تغيير كليشه المطور ⋆',type = 'text'},{text = 'حذف كليشه المطور ⋆', type = 'text'},},
 {{text = 'الغاء ⋆',type = 'text'},},
 {{text = 'رجـوع ⋆',type = 'text'},},}}
-return LuaTele.sendText(msg_chat_id,msg_id,'⋆︙اهلا بك مجددا عزيزي المطور \n⋆︙اليك الازرار الخاصه ب المطورين لبوت بيتر فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'⋆ اهلا بك مجددا عزيزي المطور \n⋆ اليك الازرار الخاصه ب المطورين ', 'md', false, false, false, false, reply_markup)
 end
 if text == "الاذاعه ⋆" and msg.Devss then
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,data = {
@@ -12566,7 +12566,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_pers
 {{text = 'اذاعه بالتوجيه ⋆',type = 'text'},{text = 'اذاعه بالتوجيه خاص ⋆', type = 'text'},},
 {{text = 'الغاء ⋆',type = 'text'},},
 {{text = 'رجـوع ⋆',type = 'text'},},}}
-return LuaTele.sendText(msg_chat_id,msg_id,'⋆︙اهلا بك مجددا عزيزي المطور \n⋆︙اليك الازرار الخاصه بالاذاعه لبوت بيتر فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'⋆ اهلا بك مجددا عزيزي المطور \n⋆ اليك الازرار الخاصه بالاذاعه', 'md', false, false, false, false, reply_markup)
 end
 if text == "العام ⋆" and msg.Devss then
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,data = {
@@ -12575,7 +12575,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_pers
 {{text = 'قائمه العام ⋆', type = 'text'},{text = 'مسح قائمه العام ⋆', type = 'text'},},
 {{text = 'الغاء ⋆',type = 'text'},},
 {{text = 'رجـوع ⋆',type = 'text'},},}}
-return LuaTele.sendText(msg_chat_id,msg_id,'⋆︙اهلا بك مجددا عزيزي المطور \n⋆︙اليك الازرار الخاصه بالعام لبوت بيتر فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'⋆ اهلا بك مجددا عزيزي المطور \n⋆ اليك الازرار الخاصه بالعام', 'md', false, false, false, false, reply_markup)
 end
 if text == "البوت ⋆" and msg.Devss then
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,data = {
@@ -12583,7 +12583,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_pers
 {{text = 'تغيير كليشه ستارت ⋆',type = 'text'},{text = 'حذف كليشه ستارت ⋆', type = 'text'},},
 {{text = 'الغاء ⋆',type = 'text'},},
 {{text = 'رجـوع ⋆',type = 'text'},},}}
-return LuaTele.sendText(msg_chat_id,msg_id,'⋆︙اهلا بك مجددا عزيزي المطور \n⋆︙اليك الازرار الخاصه ببوتك المثبت علئ لبوت بيتر فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'⋆ اهلا بك مجددا عزيزي المطور \n⋆ اليك الازرار الخاصه ببوتك', 'md', false, false, false, false, reply_markup)
 end
 --     Source PETER     --
 --     end start chat Pv     --
