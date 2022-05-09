@@ -12129,6 +12129,7 @@ end
 if text == 'جيتهاب' or text == '😭تيتثت' then
 return LuaTele.sendText(msg_chat_id,msg_id,'⋆ للتحميل من جيتهاب ارسل: تحميل جيتهاب + الرابط',"md",false, false, false, false, reply_markup)
 end
+
 if text == "توب فلوس" or text == "توب الفلوس" then
 local ban = LuaTele.getUser(msg.sender.user_id)
 if ban.first_name then
@@ -12333,7 +12334,6 @@ end
 end
 return LuaTele.sendText(msg.chat_id,msg.id,top_mony,"md",true)
 end
-
 if text == 'انشاء حساب بنكي' or text == 'انشاء حساب البنكي' or text =='انشاء الحساب بنكي' or text =='انشاء الحساب البنكي' then
 creditvi = math.random(200,30000000000000255);
 creditex = math.random(300,40000000000000255);
@@ -12437,8 +12437,6 @@ else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ ماعندك حساب بنكي ارسل ↢ ( انشاء حساب بنكي )","md",true)
 end
 end
-
-
 if text == 'تصفير النتائج' or text == 'مسح لعبه البنك' then
 if msg.ControllerBot then
 local bank_users = Redis:smembers(PETER.."noooybgy")
@@ -12460,8 +12458,6 @@ Redis:del(PETER.."ttpppi")
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ مسحت لعبه البنك ","md",true)
 end
 end
-
-
 if text == 'تصفير الحراميه' then
 if msg.ControllerBot then
 local bank_users = Redis:smembers(PETER.."zrfffidtf")
@@ -12472,8 +12468,6 @@ Redis:del(PETER.."zrfffidtf")
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ مسحت الحراميه ","md",true)
 end
 end
-
-
 if text == 'فلوسي' or text == 'فلوس' and tonumber(msg.reply_to_message_id) == 0 then
 ballancee = Redis:get(PETER.."nool:flotysb"..msg.sender.user_id) or 0
 if tonumber(ballancee) < 1 then
@@ -12481,7 +12475,6 @@ return LuaTele.sendText(msg.chat_id,msg.id, "⋆ ماعندك فلوس ارسل 
 end
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ فلوسك "..ballancee.." جنيه 💸","md",true)
 end
-
 if text == 'فلوسه' or text == 'فلوس' and tonumber(msg.reply_to_message_id) ~= 0 then
 local Remsg = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Remsg.sender.user_id)
@@ -12492,7 +12485,6 @@ end
 ballanceed = Redis:get(PETER.."nool:flotysb"..Remsg.sender.user_id) or 0
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ فلوسه *"..ballanceed.." جنيه* 💸","md",true)
 end
-
 if text == 'حسابي' or text == 'حسابي البنكي' or text == 'رقم حسابي' then
 local ban = LuaTele.getUser(msg.sender.user_id)
 if ban.first_name then
@@ -12511,9 +12503,6 @@ else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ ماعندك حساب بنكي ارسل ↢ ( انشاء حساب بنكي )","md",true)
 end
 end
-
-
-
 if text == 'مضاربه' then
 if Redis:get(PETER.."nnooooo" .. msg.sender.user_id) then  
 local check_time = Redis:ttl(PETER.."nnooooo" .. msg.sender.user_id)
@@ -12569,7 +12558,6 @@ else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ ماعندك حساب بنكي ارسل ↢ ( انشاء حساب بنكي )","md",true)
 end
 end
-
 if text == 'استثمار' then
 if Redis:get(PETER.."nnoooo" .. msg.sender.user_id) then  
 local check_time = Redis:ttl(PETER.."nnoooo" .. msg.sender.user_id)
@@ -12623,12 +12611,10 @@ else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ ماعندك حساب بنكي ارسل ↢ ( انشاء حساب بنكي )","md",true)
 end
 end
-
 if text == 'تصفير فلوسي' then
 Redis:del(PETER.."nool:flotysb"..msg.sender.user_id)
 LuaTele.sendText(msg.chat_id,msg.id, "تم تصفير فلوسك","md",true)
 end
-
 if text == 'حظ' then
 if Redis:get(PETER.."nnooo" .. msg.sender.user_id) then  
 local check_time = Redis:ttl(PETER.."nnooo" .. msg.sender.user_id)
@@ -12667,12 +12653,9 @@ else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ ماعندك حساب بنكي ارسل ↢ ( انشاء حساب بنكي )","md",true)
 end
 end
-
-
 if text == 'تحويل' then
 LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر كذا :\n\nتحويل المبلغ","md",true)
 end
-
 if text and text:match('^تحويل (.*)$') then
 local UserName = text:match('^تحويل (.*)$')
 local coniss = tostring(UserName)
@@ -12697,7 +12680,6 @@ ballancee = Redis:get(PETER.."nool:flotysb"..msg.sender.user_id) or 0
 if tonumber(ballancee) < 100 then
 return LuaTele.sendText(msg.chat_id,msg.id, "⋆ فلوسك ماتكفي \n-","md",true)
 end
-
 if tonumber(coniss) > tonumber(ballancee) then
 return LuaTele.sendText(msg.chat_id,msg.id, "⋆ فلوسك ماتكفي\n-","md",true)
 end
@@ -12741,7 +12723,6 @@ newss = "["..bann.first_name.."](tg://user?id="..bann.id..")"
 else
 newss = " لا يوجد "
 end
-
 if gg == hsabe then
 nsba = "خصمت 5% لبنك "..hsabe..""
 UserNameyr = math.floor(UserNamey / 100 * 5)
@@ -12769,7 +12750,6 @@ Redis:del(PETER.."trans" .. msg.chat_id .. ":" .. msg.sender.user_id)
 Redis:del(PETER.."transn" .. msg.sender.user_id)
 end
 end
-
 if text == "توب" or text == "التوب" then
 local reply_markup = LuaTele.replyMarkup{
 type = "inline",
@@ -12806,8 +12786,6 @@ else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ ماعنده  حساب بنكي لازم يرسل ↢ ( انشاء حساب بنكي )","md",true)
 end
 end
-
-
 if text == 'بقشيش' then
 if Redis:sismember(PETER.."noooybgy",msg.sender.user_id) then
 if Redis:get(PETER.."nnoo" .. msg.sender.user_id) then  
@@ -12829,7 +12807,6 @@ else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ ماعندك حساب بنكي ارسل ↢ ( انشاء حساب بنكي )","md",true)
 end
 end
-
 if text and text:match("^فلوس @(%S+)$") then
 local UserName = text:match("^فلوس @(%S+)$")
 local UserId_Info = LuaTele.searchPublicChat(UserName)
@@ -12847,7 +12824,6 @@ else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ ماعنده حساب بنكي ","md",true)
 end
 end
-
 if text == 'زرف' and tonumber(msg.reply_to_message_id) == 0 then
 if Redis:get(PETER.."polic" .. msg.sender.user_id) then  
 local check_time = Redis:ttl(PETER.."polic" .. msg.sender.user_id)
@@ -12915,8 +12891,6 @@ else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ ماعنده حساب بنكي ","md",true)
 end
 end
-
-
 if text == 'راتب' or text == 'راتبي' then
 if Redis:sismember(PETER.."noooybgy",msg.sender.user_id) then
 if Redis:get(PETER.."innoo" .. msg.sender.user_id) then  
