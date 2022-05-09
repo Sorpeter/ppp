@@ -3168,7 +3168,7 @@ else
 if photo.total_count > 0 then
 return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,Description..'\n◄|  ID ↬  '..UserId..'\n◄|  User ↬  ['..UserInfousername..']'..'\n◄|  Rink ↬  '..RinkBot..'\n◄|  Photos ↬ '..TotalPhoto..'\n◄|  Msgs ↬ '..TotalMsg..'\n◄|  Edits ↬ '..TotalEdit..'\n◄|  Active ↬ '..TotalMsgT..'\n◄|  Bio ↬ *'..getbio(UserId)..'*'..'', "md")
 else
-return LuaTele.sendText(msg_chat_id,msg_id,'◄|  User ↬  ['..UserInfousername..']'..'\n◄|  Rink ↬  '..RinkBot..'\n◄|  ID ↬  '..UserId..'\n◄|  Photos ↬ '..TotalPhoto..'\n◄|  Msgs ↬ '..TotalMsg..'\n◄|  Edits ↬ '..TotalEdit..'\n◄|  Active ↬ '..TotalMsgT..'\n◄|  Bio ↬ *'..getbio(UserId)..'*'..'',"md",true) 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n◄|  User ↬  ['..UserInfousername..']'..'\n◄|  Rink ↬  '..RinkBot..'\n◄|  ID ↬  '..UserId..'\n◄|  Photos ↬ '..TotalPhoto..'\n◄|  Msgs ↬ '..TotalMsg..'\n◄|  Edits ↬ '..TotalEdit..'\n◄|  Active ↬ '..TotalMsgT..'\n◄|  Bio ↬ *'..getbio(UserId)..'*'..'',"md",true) 
 end end
 else
 if Get_Is_Id then
@@ -3186,7 +3186,7 @@ local Get_Is_Id = Get_Is_Id:gsub('#photos',TotalPhoto)
 local Get_Is_Id = Get_Is_Id:gsub('#bio',getbio(UserId)) 
 return LuaTele.sendText(msg_chat_id,msg_id,'['..Get_Is_Id..']',"md",true) 
 else
-return LuaTele.sendText(msg_chat_id,msg_id,'◄|  ID ↬  '..UserId..'\n◄|  User ↬  ['..UserInfousername..']'..'\n◄|  Rink ↬  '..RinkBot..'\n◄|  Msgs ↬ '..TotalMsg..'\n◄|  Edits ↬ '..TotalEdit..'\n◄|  Active ↬ '..TotalMsgT..'\n◄|  Bio ↬ *'..getbio(UserId)..'*'..'',"md",true) 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n◄|  ID ↬  '..UserId..'\n◄|  User ↬  ['..UserInfousername..']'..'\n◄|  Rink ↬  '..RinkBot..'\n◄|  Msgs ↬ '..TotalMsg..'\n◄|  Edits ↬ '..TotalEdit..'\n◄|  Active ↬ '..TotalMsgT..'\n◄|  Bio ↬ *'..getbio(UserId)..'*'..'',"md",true) 
 end end end end
 if text == 'كشف' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
