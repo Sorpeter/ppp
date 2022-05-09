@@ -10265,7 +10265,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,[[
 ]],"md",true)    
 end 
 if text == 'حذف الايدي' or text == 'مسح الايدي' then
-if not msg.Addictive then
+if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
