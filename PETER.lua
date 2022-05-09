@@ -12338,7 +12338,6 @@ if text == 'انشاء حساب بنكي' or text == 'انشاء حساب الب
 creditvi = math.random(200,30000000000000255);
 creditex = math.random(300,40000000000000255);
 creditcc = math.random(400,80000000000000255)
-
 balas = 0
 if Redis:sismember(PETER.."noooybgy",msg.sender.user_id) then
 return LuaTele.sendText(msg.chat_id,msg.id, "⋆ لديك حساب بنكي مسبقاً\n\n⋆ لعرض معلومات حسابك اكتب\n↤ حسابي","md",true)
@@ -12425,7 +12424,6 @@ Redis:set(PETER.."nonallid"..creditex,banid)
 Redis:sadd(PETER.."noooybgy",msg.sender.user_id)
 Redis:del(PETER.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id) 
 LuaTele.sendText(msg.chat_id,msg.id, "\n⋆ سويت لك حساب في البنك ( اكسبرس ) \n\n⋆ رقم حسابك ↢ ( "..creditex.." )\n⋆ نوع البطاقة ↢ ( "..gg.." )\n⋆ فلوسك ↢ ( "..flossst.." جنيه 💸 )  ","md",true)
-
 end 
 end
 if text == 'مسح حساب بنكي' or text == 'مسح حسابي' or text == 'حذف حسابي' or text == 'مسح حساب البنكي' or text =='مسح الحساب بنكي' or text =='مسح الحساب البنكي' or text == "مسح حسابي البنكي" or text == "مسح حسابي بنكي" then
@@ -12459,7 +12457,6 @@ Redis:del(PETER.."test:mmtlkat6"..v)
 Redis:del(PETER.."zahbmm2"..v)
 end
 Redis:del(PETER.."ttpppi")
-
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ مسحت لعبه البنك ","md",true)
 end
 end
@@ -12524,7 +12521,6 @@ rr = oger(check_time)
 return LuaTele.sendText(msg.chat_id, msg.id,"⋆ مايمديك تضارب الحين\n⋆ تعال بعد "..rr.." دقيقة") 
 end
 LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر كذا :\n\nمضاربه المبلغ","md",true)
-
 end
 if text and text:match('^مضاربه (.*)$') then
 local UserName = text:match('^مضاربه (.*)$')
@@ -12582,7 +12578,6 @@ return LuaTele.sendText(msg.chat_id, msg.id,"⋆ مايمديك تستثمر ا�
 end
 LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر كذا :\n\nاستثمار المبلغ","md",true)
 end
-
 if text and text:match('^استثمار (.*)$') then
 local UserName = text:match('^استثمار (.*)$')
 local coniss = tostring(UserName)
@@ -12606,7 +12601,6 @@ end
 ballancee = Redis:get(PETER.."nool:flotysb"..msg.sender.user_id) or 0
 if tonumber(coniss) < 199 then
 return LuaTele.sendText(msg.chat_id,msg.id, "⋆ الحد الادنى المسموح هو 200 جنيه 💸\n-","md",true)
-
 end
 if tonumber(ballancee) < tonumber(coniss) then
 return LuaTele.sendText(msg.chat_id,msg.id, "⋆ فلوسك ماتكفي \n-","md",true)
@@ -12643,9 +12637,6 @@ return LuaTele.sendText(msg.chat_id, msg.id,"⋆ مايمديك تلعب لعب�
 end
 LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر كذا :\n\nحظ المبلغ","md",true)
 end
-
-
-
 if text and text:match('^حظ (%d+)$') then
 local coniss = text:match('^حظ (%d+)$')
 if Redis:sismember(PETER.."noooybgy",msg.sender.user_id) then
@@ -12662,7 +12653,6 @@ local daddd = {1,2,3,5,6};
 local haddd = daddd[math.random(#daddd)]
 if haddd == 1 or haddd == 2 or haddd == 3 then
 local ballanceek = math.floor(coniss + coniss)
-
 Redis:incrby(PETER.."nool:flotysb"..msg.sender.user_id , math.floor(ballanceek))
 Redis:setex(PETER.."nnooo" .. msg.sender.user_id,1200, true)
 ff = Redis:get(PETER.."nool:flotysb"..msg.sender.user_id)
@@ -12689,7 +12679,6 @@ local coniss = tostring(UserName)
 local coniss = coniss:gsub('٠','0')
 local coniss = coniss:gsub('١','1')
 local coniss = coniss:gsub('٢','2')
-
 local coniss = coniss:gsub('٣','3')
 local coniss = coniss:gsub('٤','4')
 local coniss = coniss:gsub('٥','5')
@@ -12712,7 +12701,6 @@ end
 if tonumber(coniss) > tonumber(ballancee) then
 return LuaTele.sendText(msg.chat_id,msg.id, "⋆ فلوسك ماتكفي\n-","md",true)
 end
-
 Redis:set(PETER.."transn"..msg.sender.user_id,coniss)
 Redis:setex(PETER.."trans" .. msg.chat_id .. ":" .. msg.sender.user_id,60, true)
 LuaTele.sendText(msg.chat_id,msg.id,[[
@@ -12771,7 +12759,6 @@ UserNameyy = math.floor(UserNamey - UserNameyr)
 Redis:incrby(PETER.."nool:flotysb"..fsvhhh ,UserNameyy)
 Redis:decrby(PETER.."nool:flotysb"..msg.sender.user_id , UserNamey)
 LuaTele.sendText(msg.chat_id,msg.id, "حوالة صادرة من البنك ↢ ( "..gg.." )\n\nالمرسل : "..news.."\nالحساب رقم : "..cccc.."\nنوع البطاقة : "..uuuu.."\nالمستلم : "..newss.."\nالحساب رقم : "..text.."\nالبنك : "..hsabe.."\nنوع البطاقة : "..nouu.."\n"..nsba.."\nالمبلغ : "..UserNameyy.." جنيه 💸","md",true)
-
 LuaTele.sendText(fsvhhh,0, "حوالة واردة من البنك ↢ ( "..gg.." )\n\nالمرسل : "..news.."\nالحساب رقم : "..cccc.."\nنوع البطاقة : "..uuuu.."\nالمبلغ : "..UserNameyy.." جنيه 💸","md",true)
 Redis:del(PETER.."trans" .. msg.chat_id .. ":" .. msg.sender.user_id) 
 Redis:del(PETER.."transn" .. msg.sender.user_id)
@@ -12862,7 +12849,6 @@ end
 end
 
 if text == 'زرف' and tonumber(msg.reply_to_message_id) == 0 then
-
 if Redis:get(PETER.."polic" .. msg.sender.user_id) then  
 local check_time = Redis:ttl(PETER.."polic" .. msg.sender.user_id)
 rr = oger(check_time)
@@ -12870,7 +12856,6 @@ return LuaTele.sendText(msg.chat_id, msg.id,"⋆ ي ظالم توك زارف \n�
 end 
 LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر كذا :\n\nزرف بالرد","md",true)
 end
-
 if text == 'زرف' or text == 'زرفه' and tonumber(msg.reply_to_message_id) ~= 0 then
 local Remsg = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Remsg.sender.user_id)
@@ -12945,7 +12930,6 @@ if ban.first_name then
 neews = "["..ban.first_name.."](tg://user?id="..ban.id..")"
 else
 neews = " لا يوجد "
-
 end
 K = 'محظوظ 2x' 
 F = '15000'
@@ -13154,7 +13138,6 @@ elseif sender == 24 then
     K = 'كاشير 🧑🏻‍💻' 
     F = '3000'
 Redis:incrby(PETER.."nool:flotysb"..msg.sender.user_id , F)
-
 local ballancee = Redis:get(PETER.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." جنيه 💸\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الحين : "..ballancee.." جنيه 💸"
 LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
