@@ -12237,6 +12237,7 @@ end
 end
 return LuaTele.sendText(msg.chat_id,msg.id,top_mony..gg,"md",true)
 end
+
 if text == "توب المتزوجين" then
 local bank_users = Redis:smembers(PETER.."almtzog"..msg_chat_id)
 if #bank_users == 0 then
@@ -12279,9 +12280,6 @@ end
 end
 return LuaTele.sendText(msg.chat_id,msg.id,top_mony,"md",true)
 end
-
-
-
 if text and text:match('^زواج (.*)$') and msg.reply_to_message_id ~= 0 then
 local UserName = text:match('^زواج (.*)$')
 local coniss = tostring(UserName)
@@ -12372,6 +12370,7 @@ else
 return LuaTele.sendText(msg_chat_id,msg_id,"⋆ اطلب الله ودورلك ع زوجه ","md")
 end
 end
+
 if text == "زواجي" then
 if not Redis:get(PETER..msg_chat_id..msg.sender.user_id.."rgalll2:") and not Redis:get(PETER..msg_chat_id..msg.sender.user_id.."bnttt2:") then
 return LuaTele.sendText(msg_chat_id,msg_id,"انت اعزب","md")
@@ -12397,7 +12396,6 @@ fnte = Redis:get(PETER..':toob:Name:'..zwga_id)
 albnt = "["..fnte.."](tg://user?id="..zwga_id..") "
 local gg = LuaTele.getUser(zoog2)
 fntey = Redis:get(PETER..':toob:Name:'..zoog2)
-
 alzog = "["..fntey.."](tg://user?id="..zoog2..") "
 return LuaTele.sendText(msg_chat_id,msg_id,"⋆ عقد زواجكم\n⋆ الزوج : "..alzog.."\n⋆ الزوجه : "..albnt.." \n⋆ المهر : "..mhrr.." جنيه ","md")
 end
@@ -12464,8 +12462,8 @@ Redis:setex(PETER.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id,60, true
 LuaTele.sendText(msg.chat_id,msg.id,[[
 ⋆ عشان تسوي حساب لازم تختار نوع البطاقة
 
-↤︎ `فيزا`
 ↤︎ `ماستر`
+↤︎ `فيزا` 
 ↤︎ `اكسبرس`
 
 - اضغط للنسخ
@@ -12481,7 +12479,7 @@ news = ""..ban.first_name..""
 else
 news = " لا يوجد"
 end
-gg = "فيزا"
+gg = "بيتر"
 flossst = Redis:get(PETER.."nool:flotysb"..msg.sender.user_id) or 0
 local banid = msg.sender.user_id
 Redis:set(PETER.."nonna"..msg.sender.user_id,news)
@@ -12504,7 +12502,7 @@ news = ""..ban.first_name..""
 else
 news = " لا يوجد"
 end
-gg = "ماستر كارد"
+gg = "بيتر"
 flossst = Redis:get(PETER.."nool:flotysb"..msg.sender.user_id) or 0
 local banid = msg.sender.user_id
 Redis:set(PETER.."nonna"..msg.sender.user_id,news)
@@ -12527,7 +12525,7 @@ news = ""..ban.first_name..""
 else
 news = " لا يوجد"
 end
-gg = "مدى"
+gg = "بيتر"
 flossst = Redis:get(PETER.."nool:flotysb"..msg.sender.user_id) or 0
 local banid = msg.sender.user_id
 Redis:set(PETER.."nonna"..msg.sender.user_id,news)
@@ -12641,6 +12639,7 @@ return LuaTele.sendText(msg.chat_id, msg.id,"⋆ مايمديك تضارب ال�
 end
 LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر كذا :\n\n`مضاربه` المبلغ","md",true)
 end
+
 if text and text:match('^مضاربه (.*)$') then
 local UserName = text:match('^مضاربه (.*)$')
 local coniss = tostring(UserName)
@@ -12829,7 +12828,7 @@ end
 Redis:set(PETER.."transn"..msg.sender.user_id,coniss)
 Redis:setex(PETER.."trans" .. msg.chat_id .. ":" .. msg.sender.user_id,60, true)
 LuaTele.sendText(msg.chat_id,msg.id,[[
-⋆ ارسل الحين رقم الحساب البنكي الي تبي تحول له
+⋆ ارسل الآن رقم الحساب البنكي الي تريد تحول له
 
 -
 ]],"md",true)  
@@ -12933,7 +12932,7 @@ end
 end
 
 
-if text == 'اكراميه' or text == 'بخشيش' then
+if text == 'اكراميه' or text == 'بقشيش' then
 if Redis:sismember(PETER.."noooybgy",msg.sender.user_id) then
 if Redis:get(PETER.."nnoo" .. msg.sender.user_id) then  
 local check_time = Redis:ttl(PETER.."nnoo" .. msg.sender.user_id)
@@ -14845,7 +14844,7 @@ if tonumber(IdUser) == tonumber(UserId[1]) then
 if StatusSilent(ChatId,UserId[2]) then
 return LuaTele.answerCallbackQuery(data.id, "\n⋆عذرآ لا تستطيع استخدام الامر على ( "..Controller(ChatId,UserId[2]).." } ", true)
 end
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '⋆ َٰ𝙎ُِ𝙊ِّ𝙐ٓ𝙍ٍّ𝘾ٍ𝙀 ًّ𝙋ٍ𝙀ٍ𝙏ٍ𝙀ٓ𝙍 🇪🇬 .', url = 'http://t.me/SORPETER'}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '⋆ َٰ𝙎ُِ𝙊ِّ𝙐ٓ𝙍ٍّ𝘾ٍ𝙀 ًّ𝙋ٍ𝙀ٍ𝙏ٍ??ٓ𝙍 🇪🇬 .', url = 'http://t.me/SORPETER'}, },}}
 if Redis:sismember(PETER.."SilentGroup:Group"..ChatId,UserId[2]) then
 Redis:srem(PETER.."SilentGroup:Group"..ChatId,UserId[2])
 else
